@@ -24,6 +24,12 @@ class enhancer {
 		this.seedRolls++
 		if (roll.multiplier < target) { profit -= roundBet(bet) } else { profit += roundBet(bet) * target - roundBet(bet) }
 		return roll
-		
+	}
+	
+	skip () {
+		var roll = await this.#app.skip()
+		this.rolls++
+		this.seedRolls++
+		return roll
 	}
 }
