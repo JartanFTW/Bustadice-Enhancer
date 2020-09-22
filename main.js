@@ -69,6 +69,29 @@ class enhancer {
 		this.#app.clearLog()
 	}
 	
+	notify (message) {
+		this.#app.notify(message)
+	}
+	
+	newSeedPair(seed) {
+		this.seedRolls = 0
+		return this.#app.newSeedPair(seed)
+	}
+	
+	setClientSeed(seed) {
+		this.seedRolls = 0
+		return this.#app.setClientSeed(seed)
+		
+	}
+	
+	resetStatistics() {
+		this.#app.resetStatistics()
+	}
+	
+	stop() {
+		this.#app.stop()
+	}
+	
 	
 	async bet (wager, target) {
 		await this.#checkStopLoss(this.#roundBet(wager))
